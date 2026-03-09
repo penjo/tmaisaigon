@@ -1,0 +1,104 @@
+.magazine-container {
+    max-width: 100%;
+    padding: 40px 5vw;
+    text-align: center;
+    position: relative;
+}
+
+
+.magazine-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("https://res.cloudinary.com/dcpftn9cy/image/upload/v1764331412/magazine-8_xrop7k.jpg");
+    background-size: contain;
+    /* ⭐ quan trọng */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    opacity: 0.6;
+
+    z-index: -1;
+}
+
+.magazine-title {
+    color: #0d1b45;
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin: 0 auto 40px;
+    padding: 14px 32px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #00000014;
+    text-transform: uppercase;
+    width: -webkit-fit-content;
+    width: fit-content;
+    z-index: 1;
+    font-family: Merriweather, serif;
+    position: relative;
+}
+
+.magazine-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.magazine-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.magazine-track {
+    display: flex;
+    gap: 28px;
+    width: max-content; 
+    animation: scrollMagazine 45s linear infinite;
+    will-change: transform;
+    margin-bottom: 40px;
+}
+.magazine-track:hover {
+    animation-play-state: paused;
+}
+.magazine-item {
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 6px 12px #00000026;
+    cursor: pointer;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    transition: transform .4s ease, box-shadow .4s ease;
+    width: 220px;
+    z-index: 1;
+    flex: 0 0 auto;
+}
+
+.magazine-item:hover {
+    transform: translateY(-8px);
+    /* Hiệu ứng bay lên khi hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.magazine-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+@keyframes scrollMagazine {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}

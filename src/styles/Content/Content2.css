@@ -1,0 +1,223 @@
+.magazine {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 50px;
+    border-radius: 20px;
+    border: 2px solid #2f5e88;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    text-align: center;
+}
+
+/* TITLE */
+.mag-title {
+    font-size: 42px;
+    color: #2c5d8f;
+}
+
+.mag-title span {
+    display: block;
+    width: 90px;
+    height: 4px;
+    margin: 12px auto 40px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #2c5d8f, #ffd000);
+}
+
+/* SLIDER */
+.mag-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mag-track {
+    position: relative;
+    height: 450px;
+    /* Tăng nhẹ chiều cao */
+    width: 100%;
+    perspective: 1000px;
+    /* Tạo môi trường 3D */
+}
+
+/* CARD */
+.mag-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease-in-out cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+.mag-card.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(200%) scale(0);
+}
+
+.mag-card:not(.pos-0) {
+    pointer-events: none;
+    /* Chặn hoàn toàn mọi tương tác click */
+    opacity: 0.5;
+    /* Làm mờ các ảnh bên cạnh để làm nổi bật ảnh giữa */
+    filter: blur(1px);
+    /* Thêm chút hiệu ứng mờ cho đẹp */
+}
+
+.mag-card:hover {
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.mag-card img {
+    width: 220px;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.magazine.website .mag-card img {
+    width: 450px;
+    /* Cho ảnh website to hẳn lên */
+    aspect-ratio: 16 / 9;
+    /* Tỉ lệ màn hình máy tính */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Tấm đang chọn: Ở chính giữa, nhô cao nhẹ */
+.magazine.website .pos-0 {
+    z-index: 10;
+    transform: translate(-50%, -60%) scale(1);
+    /* Không cần scale quá to */
+    opacity: 1;
+}
+
+/* Các tấm hai bên: Chỉ đẩy sang trái/phải một chút và làm mờ mạnh */
+.magazine.website .pos--1 {
+    transform: translate(-140%, -50%) scale(0.8);
+    opacity: 0.3;
+    /* Mờ hẳn để tập trung vào tấm giữa */
+}
+
+.magazine.website .pos-1 {
+    transform: translate(40%, -50%) scale(0.8);
+    opacity: 0.3;
+}
+
+/* Ẩn các tấm ở quá xa để tránh rối mắt */
+.magazine.website .pos--2,
+.magazine.website .pos-2 {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ===== POSITIONS ===== */
+
+/* Center (Vị trí 0) */
+.pos-0 {
+    z-index: 10;
+    /* -50% gốc, trừ thêm 15% hoặc 60px để nó nhô lên cao hơn các tấm hai bên */
+    transform: translate(-50%, -65%) scale(1.1);
+    opacity: 1;
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.4));
+    /* Bóng đổ dài hơn tạo cảm giác xa mặt đất */
+}
+
+.pos-0:hover {
+    transform: translate(-50%, -70%) scale(1.15);
+    /* Nhô cao thêm tí nữa khi hover */
+    transition: transform 0.3s ease;
+}
+
+/* Các tấm khác giữ nguyên vị trí -50% hoặc thấp hơn một chút */
+.pos--1,
+.pos-1 {
+    z-index: 5;
+    transform: translate(calc(-50% + x_offset), -50%) scale(0.85);
+    opacity: 0.7;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+/* Hai tấm bên cạnh - Hơi mờ và nghiêng nhẹ */
+.pos--1 {
+    z-index: 5;
+    transform: translate(-160%, -50%) scale(0.85) rotateY(15deg);
+    opacity: 0.7;
+}
+
+.pos-1 {
+    z-index: 5;
+    transform: translate(60%, -50%) scale(0.85) rotateY(-15deg);
+    opacity: 0.7;
+}
+
+/* Hai tấm xa nhất - Mờ hẳn */
+.pos--2 {
+    z-index: 2;
+    transform: translate(-260%, -50%) scale(0.7) rotateY(25deg);
+    opacity: 0.3;
+}
+
+.pos-2 {
+    z-index: 2;
+    transform: translate(160%, -50%) scale(0.7) rotateY(-25deg);
+    opacity: 0.3;
+}
+
+/* BUTTON */
+.mag-nav {
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 2px solid #6fa0c7;
+    background: rgba(255, 255, 255, .8);
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.mag-nav.left {
+    left: 0;
+}
+
+.mag-nav.right {
+    right: 0;
+}
+
+.mag-nav:hover {
+    background: white;
+}
+
+
+/* TAB BUTTON */
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.tab-buttons button {
+    padding: 10px 30px;
+    border-radius: 8px;
+    border: 2px solid #2c5d8f;
+    background: transparent;
+    color: #2c5d8f;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* Khi nút được chọn (Active) */
+.tab-buttons button.active {
+    background: #2c5d8f;
+    color: white;
+}

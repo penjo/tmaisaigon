@@ -1,0 +1,38 @@
+.partner-section {
+    position: relative;
+    overflow: hidden;
+
+  }
+  .partner-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+  
+    background-image: url("https://tmaisaigon.vn/background/sky.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    opacity: 0.6;
+  
+    z-index: -2;
+  }
+  .partner-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("https://tmaisaigon.vn/background/background5.png");
+    background-size: contain; /* ⭐ quan trọng */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  
+    opacity: 0.6;
+  
+    z-index: -1;
+  }
+  .partner-card {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+  }

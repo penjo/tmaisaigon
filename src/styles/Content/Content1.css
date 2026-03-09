@@ -1,0 +1,114 @@
+.about {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px;
+  
+    border-radius: 20px;
+    border: 2px solid #2f5e88;
+  
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(8px);
+  }
+  
+  /* ===== TITLE ===== */
+  .about-title {
+    text-align: center;
+    font-size: 42px;
+    color: #2c5d8f;
+    margin-bottom: 50px;
+    position: relative;
+  }
+  
+  .title-line {
+    display: block;
+    width: 90px;
+    height: 4px;
+    margin: 12px auto 0;
+    border-radius: 10px;
+    background: linear-gradient(90deg,#2c5d8f,#ffd000);
+  }
+  
+  /* ===== GRID ===== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 28px;
+  }
+  
+  /* ===== CARD ===== */
+  .about-card {
+    background: linear-gradient(145deg, #fff, #f8fbff);
+    border: 2px solid #0000;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px #1a54901f;
+    box-sizing: border-box;
+    color: #1a5276;
+    cursor: pointer;
+    letter-spacing: .5px;
+    line-height: 1.3;
+    min-height: 280px;
+    overflow: hidden;
+    padding: 30px 22px 0 !important;
+    position: relative;
+    text-align: center;
+    transition: all .4s cubic-bezier(.4, 0, .2, 1);
+  }
+  
+  /* ⭐ hover xịn */
+  .about-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  }
+  
+  /* header */
+  .card-header {
+    background: #a9c2da;
+    color: #1f4c7a;
+  
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  
+    margin-bottom: 20px;
+  }
+  
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  /* date card */
+  .highlight {
+    background: #f3eddc;
+    border: 2px solid #f0d28a;
+  }
+  
+  .date-box {
+    background: #fff6df;
+    border-radius: 14px;
+    padding: 30px;
+    text-align: center;
+  
+    font-size: 36px;
+    font-weight: bold;
+    color: #3f7fb3;
+  }
+  
+  /* text */
+  .about-card p {
+    line-height: 1.7;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    
+  }
+
+  @media (max-width: 900px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+  }

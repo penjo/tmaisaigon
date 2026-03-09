@@ -1,0 +1,116 @@
+.website-container {
+    min-height: 100vh;
+    padding: 40px 5vw;
+    text-align: center;
+    position: relative;
+}
+
+.website-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+  
+    background-image: url("https://tmaisaigon.vn/background/sky.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    opacity: 0.6;
+  
+    z-index: -2;
+  }
+.website-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("https://tmaisaigon.vn/background/background3.png");
+    background-size: contain;
+    /* ⭐ quan trọng */
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    opacity: 0.6;
+
+    z-index: -1;
+}
+
+
+.website-title {
+    color: #0d1b45;
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin: 0 auto 40px;
+    padding: 14px 32px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #00000014;
+    text-transform: uppercase;
+    width: -webkit-fit-content;
+    width: fit-content;
+    z-index: 1;
+    font-family: Merriweather, serif;
+    position: relative;
+}
+.web-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Thẻ Card */
+.web-card {
+    background: rgba(255, 255, 255, 0.7); /* Độ trong suốt nhẹ */
+    backdrop-filter: blur(10px); /* Hiệu ứng mờ kính (glassmorphism) */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    width: 350px;
+    padding: 30px;
+    text-decoration: none; /* Bỏ gạch chân thẻ a */
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.web-card:hover {
+    transform: translateY(-10px); /* Bay lên khi hover */
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.web-card-img {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.web-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Chữ trong Card */
+.web-card-content h3 {
+    color: #1f4f82;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.web-card-content p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .web-card {
+        width: 100%;
+    }
+}

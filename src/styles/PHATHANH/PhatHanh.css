@@ -1,0 +1,95 @@
+.phathanh-section {
+    text-align: center;
+
+    background-image: url("https://tmaisaigon.vn/static/media/sky.46234db72e234362a68a.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.phathanh-container {
+    max-width: 1300px;
+    margin: 0px auto;
+    padding: 60px 6%;
+}
+
+/* content */
+.phathanh-section>* {
+    position: relative;
+    z-index: 2;
+}
+
+/* title */
+
+.phathanh-header h2 {
+    font-size: 48px;
+    color: #1f4f82;
+    font-weight: 700;
+}
+
+.title-line1 {
+    display: block;
+    width: 90px;
+    height: 5px;
+    margin: 10px auto 60px;
+    font-size: 56px;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+    background: linear-gradient(90deg, #1f4f82, #f2b705);
+    border-radius: 3px;
+}
+
+/* card */
+
+.phathanh-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1f4f82, #2e6aa3);
+    border-radius: 20px;
+    margin-bottom: 50px;
+    padding: 40px 50px;
+
+    color: white;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.phathanh-card::before {
+    background: #ffffff0d;
+    border-radius: 50%;
+    content: "";
+    height: 400px;
+    position: absolute;
+    right: -10%;
+    top: -50%;
+    width: 400px;
+    z-index: 0;
+}
+
+.phathanh-card h3 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.phathanh-card p {
+    font-size: 20px;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+@media (max-width:768px) {
+
+    .phathanh-card {
+        padding: 40px 25px;
+    }
+
+    .phathanh-card h3 {
+        font-size: 30px;
+    }
+
+    .phathanh-header h2 {
+        font-size: 34px;
+    }
+
+}

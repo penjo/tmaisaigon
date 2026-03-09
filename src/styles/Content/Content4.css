@@ -1,0 +1,82 @@
+.project-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px;
+  }
+  
+  .project-frame {
+    border: 2px solid #2c5d8f;
+    border-radius: 20px;
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px);
+  }
+  
+  .project-title {
+    font-size: 42px;
+    color: #2c5d8f;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+  }
+  
+  .project-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+  }
+  
+  .project-track {
+    position: relative;
+    height: 450px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+  }
+  
+  .project-card {
+    position: absolute;
+    width: 320px;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0; /* Mặc định ẩn các tấm ở xa */
+    pointer-events: none;
+  }
+  
+  /* Tấm ở giữa - Nổi bật nhất */
+  .project-card.pos-0 {
+    z-index: 10;
+    transform: translateX(0) scale(1.1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* Tấm bên trái */
+  .project-card.pos--1 {
+    z-index: 5;
+    transform: translateX(-60%) scale(0.85) rotateY(15deg);
+    opacity: 0.6;
+  }
+  
+  /* Tấm bên phải */
+  .project-card.pos-1 {
+    z-index: 5;
+    transform: translateX(60%) scale(0.85) rotateY(-15deg);
+    opacity: 0.6;
+  }
+  
+  /* Ẩn tấm thứ 4 (tấm đang đợi ở phía sau) */
+  .project-card.pos-2, .project-card.pos--2 {
+    z-index: 1;
+    transform: translateX(0) scale(0.5);
+    opacity: 0;
+  }
+  
+  .project-card img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  }

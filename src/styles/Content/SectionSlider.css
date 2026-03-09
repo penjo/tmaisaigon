@@ -1,0 +1,187 @@
+.custom-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    border: 1px solid #2c5d8f;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+
+/* Hiệu ứng chuyển ảnh mượt */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+.slider-nav-btn {
+    position: absolute;
+    /* Đưa nút ra khỏi luồng thông thường */
+    top: 50%;
+    transform: translateY(-50%);
+    /* Căn giữa dọc tuyệt đối */
+
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border: 1px solid #2c5d8f;
+    border-radius: 50%;
+    /* Hình tròn giống trong ảnh */
+    color: #2c5d8f;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Đổ bóng nhẹ */
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.slider-nav-btn:hover {
+    background: #2c5d8f;
+    color: #fff;
+}
+
+/* Định vị nút trái và phải sát viền ảnh */
+.slider-nav-btn.prev {
+    left: -60px;
+}
+
+.slider-nav-btn.next {
+    right: -60px;
+}
+
+/* Tùy chỉnh ảnh và Caption (dải đen mờ dưới ảnh) */
+.shared-content {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.img-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.5);
+    /* Dải đen mờ */
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.shared-content img {
+    width: 100%;
+    height: 450px;
+    /* Cố định chiều cao để không bị giật trang khi chuyển ảnh */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Hiệu ứng mờ dần khi đổi ảnh */
+.fade-img {
+    animation: fadeEffect 0.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0.6;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.section-slider {
+    position: relative;
+    /* Quan trọng để định vị nút tuyệt đối */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+/* Style chung cho 2 nút bấm */
+.nav-btn {
+    position: absolute;
+    /* Đưa nút ra khỏi dòng chảy để đè lên viền ảnh */
+    top: 50%;
+    transform: translateY(-50%);
+    /* Căn giữa dọc chuẩn */
+
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border: 1.5px solid #6fa0c7;
+    /* Viền xanh nhạt giống hình */
+    border-radius: 50%;
+    /* Hình tròn */
+    color: #2c5d8f;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Đổ bóng nhẹ */
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.nav-btn:hover {
+    background: #2c5d8f;
+    color: #fff;
+    border-color: #2c5d8f;
+}
+
+/* Định vị nút sang 2 bên */
+.nav-btn.left {
+    left: -25px;
+    /* Đẩy nút ra ngoài viền ảnh một chút */
+}
+
+.nav-btn.right {
+    right: -25px;
+}
+
+/* Container chứa ảnh */
+.image-container {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Chú thích màu đen mờ dưới ảnh (nếu bạn muốn giống hình) */
+.img-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.6); /* Nền đen mờ */
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    z-index: 5;
+    pointer-events: none; /* Để không cản trở việc click vào ảnh */
+}

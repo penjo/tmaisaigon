@@ -1,0 +1,72 @@
+.partners-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 50px;
+    border-radius: 20px;
+    border: 2px solid #2f5e88;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    text-align: center;
+  }
+  
+  .partners-title {
+    font-size: 42px;
+    color: #2c5d8f;
+  }
+  .partners-title span{
+    display: block;
+    width: 90px;
+    height: 4px;
+    margin: 12px auto 40px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #2c5d8f, #ffd000);
+  }
+  .partners-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* Thêm mask để logo mờ dần khi chạm viền xanh cho đẹp */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+  
+  .partners-track {
+    display: flex;
+    gap: 30px;
+    animation: scrollInfinite 30s linear infinite;
+    width: max-content;
+    padding: 10px 0; /* Tạo khoảng trống cho bóng đổ của card không bị cắt */
+  }
+  
+  @keyframes scrollInfinite {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  .partner-card {
+    flex-shrink: 0;
+    height: 140px;
+    min-width: 200px;
+    padding: 26px 30px;
+    background: #fff;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  .partner-card img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    transition: 0.3s ease;
+  }
+  .partner-card a {
+    height: 140px;
+    min-width: 200px;
+   
+  }
+  .partner-card:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
